@@ -6,9 +6,55 @@
     <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
   </head>
   <body>
-    <a-scene>
+    <a-scene
+      fog="color: #772424; density: 0.180; far: 20; near: 5; type: exponential"
+      keyboard-shortcuts=""
+      screenshot=""
+      xr-mode-ui=""
+      device-orientation-permission-ui=""
+    >
+      <a-assets>
+        <a-asset-item id="chair" src="assets/OfficeChair.glb"></a-asset-item>
+        <a-asset-item id="plaque" src="assets/Plaque.glb"></a-asset-item>
+        <a-asset-item id="plant" src="assets/plant.glb"></a-asset-item>
+        <a-asset-item id="sidetable" src="assets/SideTable.glb"></a-asset-item>
+      </a-assets>
+
+      <!-- Utilisation du modèle GLTF -->
+      <a-gltf-model
+        src="#chair"
+        position="2.17479 0.4 -2.32745"
+        gltf-model="assets/OfficeChair.glb"
+        rotation="0 -29.999999999999996 0"
+      >
+      </a-gltf-model>
+      <a-gltf-model
+        src="#plaque"
+        rotation="0 90 0"
+        gltf-model="assets/Plaque.glb"
+        scale="5 1 5"
+      >
+      </a-gltf-model>
+      <a-gltf-model
+        src="#plant"
+        gltf-model="assets/plant.glb"
+        scale="3 2.5 3"
+        position="0 0.43242 0"
+      >
+      </a-gltf-model>
+      <a-gltf-model
+        src="#sidetable"
+        gltf-model="assets/SideTable.glb"
+        scale="0.5 0.5 0.5"
+        position="1.68271 0.63011 -1.77061"
+      >
+      </a-gltf-model>
       <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-sphere
+        position="2.52661 1.25 -5"
+        radius="1.25"
+        color="#EF2D5E"
+      ></a-sphere>
       <a-cylinder
         position="1 0.75 -3"
         radius="0.5"
@@ -20,10 +66,11 @@
         rotation="-90 0 0"
         width="4"
         height="4"
-        color="#7BC8A4"
+        color="#2c2d2e"
+        geometry="height: 1000; width: 1000"
       ></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
-      <a-camera> </a-camera>
+      <a-sky color="#001f53"></a-sky>
+      <a-camera position="0 1.6 2.980471472124568"> </a-camera>
     </a-scene>
   </body>
 </html>
